@@ -1,8 +1,8 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, ObjectId, PrimaryGeneratedColumn } from "typeorm";
 
 export class ReviewModel {
   @PrimaryGeneratedColumn()
-  _id: string;
+  id: string;
   @Column()
   name: string;
   @Column()
@@ -11,6 +11,6 @@ export class ReviewModel {
   descriptions: string;
   @Column()
   rating: string;
-  @Column()
-  createdAt: Date;
+  @Column({nullable: true})
+  productId: number
 }
