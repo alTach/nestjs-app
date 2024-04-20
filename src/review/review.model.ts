@@ -10,7 +10,7 @@ export class ReviewModel {
   @Column()
   descriptions: string;
   @Column()
-  rating: string;
+  rating: number;
   @Column({nullable: true})
   productId: number
 }

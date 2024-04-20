@@ -9,7 +9,13 @@ export class ReviewService {
    constructor(@InjectRepository(ReviewModel) public reviewRepository: Repository<ReviewModel>) {}
 
   async create(dto: CreateReviewDto) {
-     const review = this.reviewRepository.create(dto);
+     const review = this.reviewRepository.create();
+    review.id = dto.id;
+    review.name = dto.name;
+    review.title = dto.title;
+    review.descriptions = dto.descriptions;
+    review.rating = dto.rating;
+    review.productId = dto.productId;
      return this.reviewRepository.save([review])
   }
 
