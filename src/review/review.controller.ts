@@ -11,8 +11,8 @@ import {
   ValidationPipe
 } from '@nestjs/common';
 import { CreateReviewDto } from "./dto/create-review.dto";
-import { ReviewService } from "src/review/review.service";
-import { REVIEW_NOT_FOUND } from "src/review/review.constant";
+import { ReviewService } from "./review.service";
+import { REVIEW_NOT_FOUND } from "./review.constant";
 
 @Controller('review')
 export class ReviewController {

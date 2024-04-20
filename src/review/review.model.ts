@@ -1,5 +1,6 @@
-import { Column, ObjectId, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity('review')
 export class ReviewModel {
   @PrimaryGeneratedColumn()
   id: string;

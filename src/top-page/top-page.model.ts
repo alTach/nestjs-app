@@ -1,4 +1,4 @@
-import { Column } from "typeorm";
+import { Column, Entity } from "typeorm";
 
 export enum TopLeverCategory {
   Courses,
@@ -7,6 +7,7 @@ export enum TopLeverCategory {
   Products
 }
 
+@Entity()
 export class HHData {
   @Column()
   count: number;

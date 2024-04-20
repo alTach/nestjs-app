@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from "@nestjs/typeorm";
-import { ReviewModel } from "src/review/review.model";
+import { ReviewModel } from "./review.model";
 import { Repository } from "typeorm";
 import { CreateReviewDto } from "./dto/create-review.dto";
 
@@ -9,14 +9,7 @@ export class ReviewService {
    constructor(@InjectRepository(ReviewModel) public reviewRepository: Repository<ReviewModel>) {}
 
   async create(dto: CreateReviewDto) {
-     const review = this.reviewRepository.create();
-    review.id = dto.id;
-    review.name = dto.name;
-    review.title = dto.title;
-    review.descriptions = dto.descriptions;
-    review.rating = dto.rating;
-    review.productId = dto.productId;
-     return this.reviewRepository.save([review])
+     return this.reviewRepository.save([dto])
   }
 
   async delete(id: string) {
